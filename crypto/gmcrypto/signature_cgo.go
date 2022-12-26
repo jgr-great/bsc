@@ -27,10 +27,11 @@ import (
 	"github.com/pkg/errors"
 
 	"fmt"
+	"math/big"
+
 	"github.com/ethereum/go-ethereum/crypto/gm/p256"
 	"github.com/ethereum/go-ethereum/crypto/gm/sm2"
 	"github.com/ethereum/go-ethereum/log"
-	"math/big"
 
 	"github.com/ethereum/go-ethereum/common/math"
 	"github.com/ethereum/go-ethereum/crypto/secp256k1"
@@ -177,9 +178,9 @@ func zeroBytes(bytes []byte) {
 // The public key should be in compressed (33 bytes) or uncompressed (65 bytes) format.
 // The signature should have the 64 byte [R || S] format.
 func VerifySignature(pubkey, digestHash, signature []byte) bool {
-	if len(signature) != SignatureLength || len(digestHash) != 32 {
-		return false
-	}
+	//if len(signature) != SignatureLength || len(digestHash) != 32 {
+	//	return false
+	//}
 	if CryptoType == CRYPTO_P256_SH3_AES {
 		if len(pubkey) == 33 {
 			p256pub, err := DecompressPubkey(pubkey)

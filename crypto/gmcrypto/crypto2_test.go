@@ -5,16 +5,18 @@ import (
 	"crypto/rand"
 	"encoding/hex"
 	"fmt"
+
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/crypto/ecies"
 	"github.com/ethereum/go-ethereum/crypto/gm/sm3"
 
-	"golang.org/x/crypto/sha3"
 	"io/ioutil"
 	"log"
 	"math/big"
 	"time"
+
+	"golang.org/x/crypto/sha3"
 
 	// "reflect"
 	"testing"
@@ -332,6 +334,7 @@ func TestSm2Recover(t *testing.T) {
 	fmt.Println("pk", hex.EncodeToString(pk1))
 
 }
+
 func Test_02(t *testing.T) {
 	var vv [32]byte
 	msg := []byte("xiangojfoengjidie1234eu9830u4")
